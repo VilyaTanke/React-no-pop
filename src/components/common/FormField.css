@@ -1,0 +1,38 @@
+.formField-label {
+    background-color: rgb(171, 218, 248);
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-color: rgb(0, 140, 255);
+    border-radius: 2px;
+    color: rgb(58, 61, 64);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s;
+  }
+  
+  .formField-input {
+    background-color: transparent;
+    font-size: 20px;
+    height: 36px;
+    outline-style: none;
+    padding: 2px 10px 5px 10px;
+    width: 100%;
+  }
+  
+  .formField-label span {
+    padding: 5px 10px 0 10px;
+  }
+  
+  .formField-label span:first-letter {
+    text-transform: capitalize;
+  }
+  
+  .formField--focused .formField-label {
+      color: rgb(0, 0, 0);
+      border-color: rgb(40, 29, 242);
+    }
+  
+  .formField:focus-within .formField-label {
+    color: rgb(0, 0, 0);
+    border-color: rgb(29, 242, 72);
+  }
