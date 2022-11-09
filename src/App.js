@@ -1,12 +1,20 @@
+// import TweetsPage from './components/tweets/TweetsPage';
+import LoginPage from './components/auth/LoginPage';
+import { useState } from 'react';
 
-import './App.css';
+function App({ isInitiallyLogged }) {
+  const [isLogged, setIsLogged] = useState(isInitiallyLogged);
 
-function App() {
+  const handleLogin = () => setIsLogged(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-       
-      </header>
+    <div className="app">
+      <LoginPage onLogin={handleLogin} />
+      {/* {isLogged ? (
+        <TweetsPage isLogged={isLogged} />
+      ) : (
+        <LoginPage onLogin={handleLogin} />
+      )} */}
     </div>
   );
 }

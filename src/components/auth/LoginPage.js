@@ -38,7 +38,7 @@ const LoginPage = ({ onLogin }) => {
                 <FormField
                     type="text"
                     name="username"
-                    label="phone, email or username"
+                    label="email or Username"
                     className="loginForm-field"
                     onChange={handleChangeUsername}
                     value={username}
