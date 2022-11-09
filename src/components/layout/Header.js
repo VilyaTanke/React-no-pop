@@ -9,6 +9,7 @@ const Header = ({ className, isLogged }) => {
     return (
         <header className={classNames('header', className)}>
             <div className="header-logo">
+                <img src={logo} alt="React-no-pop" />
                 <Icon width="32" height="32" />
             </div>
             <nav className="header-nav">
