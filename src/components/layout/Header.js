@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import Button from '..//common/Button';
 
-import logo, { ReactComponent as Icon } from '../../assets/LOGOReactNoPop.svg';
+import { ReactComponent as Icon } from '../../assets/LOGOReactNoPop.svg';
 
 import './Header.css';
 
@@ -9,8 +9,7 @@ const Header = ({ className, isLogged }) => {
     return (
         <header className={classNames('header', className)}>
             <div className="header-logo">
-                <img src={logo} alt="React-no-pop" />
-                <Icon width="32" height="32" />
+                <Icon width="64" height="64" />
             </div>
             <nav className="header-nav">
                 {isLogged ? (

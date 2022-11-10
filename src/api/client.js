@@ -21,4 +21,8 @@ client.interceptors.response.use(
 export const setTokenAuthority = accessToken =>
     (client.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`);
 
+export const removeTokenAuthority = () => {
+    delete client.defaults.headers.common['Authorization'];
+}
+
 export default client;

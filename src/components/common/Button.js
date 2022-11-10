@@ -6,13 +6,14 @@ const Button = styled.button`
   align-items: center;
   background-color: ${props =>
     props.variant === 'primary' ? accentColor : 'white'};
-  border-radius: 3px;
+  border-radius: 5px;
   border-style: solid;
-  border-width: 1px;
+  border-width: 4px;
   border-color: ${accentColor};
   color: ${props => (props.variant === 'primary' ? 'white' : accentColor)};
   cursor: pointer;
   display: inline-flex;
+  margin-left: 250px;
   font: inherit;
   font-weight: bold;
   min-height: 36px;

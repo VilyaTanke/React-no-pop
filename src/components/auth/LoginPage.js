@@ -1,15 +1,20 @@
 import { useState } from 'react';
+// import { useLocation, useNavigate } from 'react-router-dom';
 import Button from '../common/Button';
 import FormField from '../common/FormField';
 
 import './LoginPage.css';
 import { login } from './service';
 
+import { ReactComponent as Icon } from '../../assets/LOGOReactNoPop.svg';
+
 const LoginPage = ({ onLogin }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
     const [isFetching, setIsFetching] = useState(false);
+    // const location = useLocation();
+    // const navigate = useNavigate();
 
     const handleChangeUsername = event => setUsername(event.target.value);
     const handleChangePassword = event => setPassword(event.target.value);
@@ -23,6 +28,8 @@ const LoginPage = ({ onLogin }) => {
             setIsFetching(true);
             await login({ username, password });
             onLogin();
+            // const to = location.state?.from?.pathname || '/';
+            // navigate(to, { replace: true });
         } catch ( error ) {
             setError(error);
             setIsFetching(false);
@@ -33,7 +40,10 @@ const LoginPage = ({ onLogin }) => {
 
     return (
         <div className="loginPage">
-            <h1 className="loginPage-title">Login to React-no-pop</h1>
+            <h1 className="loginPage-title">
+                <Icon width="100" height="100"/>
+                Login to React-no-pop
+            </h1>
             <form onSubmit={handleSubmit}>
                 <FormField
                     type="text"

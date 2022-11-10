@@ -1,4 +1,4 @@
-import client, { setTokenAuthority } from '../../api/client';
+import client, { setTokenAuthority, removeTokenAuthority, } from '../../api/client';
 import storage from '../../utils/storage';
 
 export const login = credentials => {
@@ -7,3 +7,10 @@ export const login = credentials => {
         storage.set('auth', accessToken);
     });
 };
+
+export const logout = () => {
+    return Promise.resolve().then(() => {
+        removeTokenAuthority();
+        storage.remove('auth');
+    })
+}
