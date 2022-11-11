@@ -1,6 +1,6 @@
-import './ErrorDisplay.css'
+import './ErrorAlert.css'
 
-const ErrorDisplay = ({resetError, error}) => {
+const ErrorAlert = ({resetError, error}) => {
     return (
         <div className='loginPage-error' onClick={resetError}>
         {error.message}
@@ -8,4 +8,4 @@ const ErrorDisplay = ({resetError, error}) => {
     )
 };
 
-export default ErrorDisplay;
+export default ErrorAlert;

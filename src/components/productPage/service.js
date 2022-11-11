@@ -7,28 +7,28 @@ export const getLastestProducts = () => {
     return client.get(url);
 };
 
-export const getAds =  async () => {
+export const getProduct =  async () => {
     const ads = await client.get(productUrl)
     
     return ads;
    
 };
 
-export const getAdId = async (adId) => {
-    const ad = await client.get(`${productUrl}/${adId}`);
+export const getIdProduct = async (productId) => {
+    const ad = await client.get(`${productUrl}/${productId}`);
 
     return ad;
 }
 
-export const createAd = async (body) => {
+export const createProduct = async (body) => {
     
     const response = await client.post(productUrl,body);
     
     return response;
 };
 
-export const deleteAd = async (adId) => {
-    const deletedAd = await client.delete(`${productUrl}/${adId}`);
+export const deleteProduct = async (productId) => {
+    const deleteProduct = await client.delete(`${productUrl}/${productId}`);
     
-    return deletedAd;
+    return deleteProduct;
 };
