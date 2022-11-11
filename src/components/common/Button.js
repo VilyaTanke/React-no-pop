@@ -13,7 +13,8 @@ const Button = styled.button`
   color: ${props => (props.variant === 'primary' ? 'white' : accentColor)};
   cursor: pointer;
   display: inline-flex;
-  margin-left: 250px;
+  margin-left: 240px;
+  align-self: center;
   font: inherit;
   font-weight: bold;
   min-height: 36px;
