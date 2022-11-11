@@ -1,0 +1,9 @@
+.product_page {
+    min-height: 30px;
+    background-color: aqua;
+}
+
+.product_cont {
+    text-decoration: none;
+    color: rgb(17, 14, 14);
+}
