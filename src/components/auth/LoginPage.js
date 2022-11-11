@@ -2,6 +2,7 @@ import { useState } from 'react';
 // import { useLocation, useNavigate } from 'react-router-dom';
 import Button from '../common/Button';
 import FormField from '../common/FormField';
+// import { useAuth } from './context';
 
 import './LoginPage.css';
 import { login } from './service';
@@ -15,6 +16,7 @@ const LoginPage = ({ onLogin }) => {
     const [isFetching, setIsFetching] = useState(false);
     // const location = useLocation();
     // const navigate = useNavigate();
+    // const { handleLogin } = useAuth();
 
     const handleChangeUsername = event => setUsername(event.target.value);
     const handleChangePassword = event => setPassword(event.target.value);
@@ -27,7 +29,7 @@ const LoginPage = ({ onLogin }) => {
             resetError();
             setIsFetching(true);
             await login({ username, password });
-            onLogin();
+            // handleLogin();
             // const to = location.state?.from?.pathname || '/';
             // navigate(to, { replace: true });
         } catch ( error ) {
@@ -37,6 +39,10 @@ const LoginPage = ({ onLogin }) => {
     };
 
     const isButtonEnabled = () => username && password && !isFetching;
+
+    // const isButtonEnabled = useMemo(() => {
+    //     return username && password && !isFetching;
+    //   }, [username, password, isFetching]);
 
     return (
         <div className="loginPage">
@@ -62,7 +68,7 @@ const LoginPage = ({ onLogin }) => {
                     value={password}
                 />
                 <Button
-                    type="text"
+                    type="submit"
                     variant="primary"
                     className="loginForm-field"
                     disabled={!isButtonEnabled()}
