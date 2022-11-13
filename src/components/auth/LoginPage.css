@@ -1,4 +1,6 @@
 .loginPage {
+    display: block;
+    align-items: center;
     margin-left: auto;
     margin-right: auto;
     margin-top: 40px;
@@ -35,5 +37,10 @@
   .loginForm-submit {
     margin-top: 10px;
     width: 100%;
+  }
+
+  .checkBoxLog {
+    display: flex!important;
+    justify-content: center!important;
   }
   

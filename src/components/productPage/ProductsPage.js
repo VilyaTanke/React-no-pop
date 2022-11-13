@@ -56,22 +56,25 @@ const ProductsPage = ({ onLogout }) => {
                     <Link to="/adverts/new">publica un anuncio.</Link>
                   </div>
                 )}
-                {products.map((product) => (
-                  <li key={product.id}>
-                    <Link to={`/ads/${product.id}`} key={product.id} className='product_cont'>
-                    <ModelProduct product={product} />
-                      <ul className="advert-container">
-                        <li>
-                          <strong>{product.name}</strong>
-                        </li>
-                        <li>{forSale(product.sale)}</li>
-                        <li>Precio: {product.price}€</li>
-                        <li>Tags: {product.tags.join(', ')}</li>
-                      </ul>
-                    </Link>
-                  </li>
-                ))}
               </ul>
+              <div class="wapper">
+
+              {products.map((product) => (
+                  <div  key={product.id}>
+                    <Link to={`/ads/${product.id}`} key={product.id} class='product_cont'>
+                    <ModelProduct product={product} />
+                      <div className="advert-container">
+                        <span>
+                          <strong>{product.name}</strong>
+                        </span>
+                        <span>{forSale(product.sale)}</span>
+                        <span>Precio: {product.price}</span>
+                        <span>Tags: {product.tags.join(', ')}</span>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
             </div>
           ) : (
             <div>

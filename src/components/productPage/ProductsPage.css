@@ -3,7 +3,20 @@
     
 }
 
+.wapper{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 15px;
+    padding: 1.5rem;
+}
+
 .product_cont {
+    text-decoration: none!important;
+    color: rgb(17, 14, 14);
+}
+
+.advert-container {
     text-decoration: none;
     color: rgb(17, 14, 14);
 }

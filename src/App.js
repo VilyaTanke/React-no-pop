@@ -7,6 +7,7 @@ import { logout } from './components/auth/service';
 
 import LoginState from './components/auth/LoginState'
 import Layout from './components/layout/Layout';
+import NewProductPage from './components/productPage/NewProductPage';
 
 function App({ isInitiallyLogged }) {
   const [isLogged, setIsLogged] = useState(isInitiallyLogged);
@@ -48,7 +49,7 @@ function App({ isInitiallyLogged }) {
           path="/products/new"
           element={
             <LoginState isLogged={isLogged}>
-              <ProductsPage onLogout={handleLogout} />
+              <NewProductPage onLogout={handleLogout} />
             </LoginState>
           }
         />

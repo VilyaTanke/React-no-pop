@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import Layout from '../layout/Layout.js';
-import { createAdvert } from './service.js';
-import './NewAdvertPage.css';
+import { createProduct } from './service.js';
+import './NewProductPage.css';
 
-const NewAdvertPage = ({ onLogout }) => {
+const NewProductPage = ({ onLogout }) => {
   const [name, setName] = useState('');
   const [sale, setSale] = useState(null);
   const [tags, setTags] = useState([]);
@@ -51,8 +51,8 @@ const NewAdvertPage = ({ onLogout }) => {
       formData.append('tags', tags);
       photo && formData.append('photo', photo);
 
-      const createdAdvert = await createAdvert(formData);
-      navigate(`/adverts/${createdAdvert.id}`);
+      const createdAdvert = await createProduct(formData);
+      navigate(`/products/${createdAdvert.id}`);
     } catch (error) {
       if (error.status === 401) {
         navigate('/login');
@@ -73,7 +73,7 @@ const NewAdvertPage = ({ onLogout }) => {
             <div className="adverts-create">
               <div>
                 <label htmlFor="Name">Nombre</label>
-                <input type="text" name="Name" id="Name" onChange={handleChangeName} />
+                <input type="text" name="Name" id="name" onChange={handleChangeName} />
               </div>
 
               <div>
@@ -99,9 +99,10 @@ const NewAdvertPage = ({ onLogout }) => {
                 />
 
               </div>
-
-              <div>
+              <div className="tagsLab">
                 <label htmlFor="Tags">Tags</label>
+              </div>
+              <div>
                 <select
                   style={{ padding: '20px' }}
                   multiple
@@ -142,4 +143,4 @@ const NewAdvertPage = ({ onLogout }) => {
   );
 };
 
-export default NewAdvertPage;
+export default NewProductPage;

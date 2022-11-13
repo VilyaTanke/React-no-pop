@@ -2,16 +2,17 @@ import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Button from '../common/Button';
 import FormField from '../common/FormField';
-import { useAuth } from './context';
 
 import './LoginPage.css';
 import { login } from './service';
 
 import { ReactComponent as Icon } from '../../assets/LOGOReactNoPop.svg';
+import CheckBox from '../common/CheckBox';
 
 const LoginPage = ({ onLogin, ...props }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [check, setCheck] = useState(false);
     const [error, setError] = useState(null);
     const [isFetching, setIsFetching] = useState(false);
     const location = useLocation();
@@ -19,6 +20,7 @@ const LoginPage = ({ onLogin, ...props }) => {
 
     const handleChangeEmail = event => setEmail(event.target.value);
     const handleChangePassword = event => setPassword(event.target.value);
+    const handleChangeCheck = (event) => setCheck(event.target.checked);
     const resetError = () => setError(null);
 
     const handleSubmit = async event => {
@@ -38,10 +40,6 @@ const LoginPage = ({ onLogin, ...props }) => {
     };
 
     const isButtonEnabled = () => email && password && !isFetching;
-
-    // const isButtonEnabled = useMemo(() => {
-    //     return username && password && !isFetching;
-    //   }, [username, password, isFetching]);
 
     return (
         <div className="loginPage">
@@ -66,6 +64,17 @@ const LoginPage = ({ onLogin, ...props }) => {
                     onChange={handleChangePassword}
                     value={password}
                 />
+
+                <div class="checkBoxLog">
+                <CheckBox
+                    type='checkbox'
+                    label='Recordar'
+                    onChange={handleChangeCheck}
+                    value={check}
+                    
+                ></CheckBox>
+                </div>
+
                 <Button
                     type="submit"
                     variant="primary"

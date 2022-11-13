@@ -1,0 +1,58 @@
+
+
+.adverts-create-container {
+  display: flex;
+  justify-content: left;
+  align-self:auto;
+  background-color: rgb(235, 250, 255);
+  width: 300px;
+  height: auto;
+  margin-left: 5px;
+}
+
+#Name {
+  margin: 150px;
+}
+.adverts-create {
+  padding: 25px;
+}
+
+.filter-fieldset-radio {
+  border-color: transparent;
+  padding: 6px;
+  align-items: center;
+  margin: 10px;
+}
+
+.filter-fieldset-radio input {
+  margin-right: 20px;
+  margin-left: -5px;
+  align-items: center;
+}
+
+.Price {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+option {
+  text-align: center;
+}
+
+.tagsLab {
+  margin: 8px;
+}
+
+.labelbutton {
+  margin: 9px;
+  
+}
+
+button {
+  background-color: rgb(0, 140, 255);
+  border-radius: 8px;
+  border-color: aqua;
+  color: aliceblue;
+}
