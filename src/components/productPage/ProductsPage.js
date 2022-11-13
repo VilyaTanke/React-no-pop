@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { getProduct } from './service';
-import { Link, useNavigate } from 'react-router-dom';
-import OkScreen from '../common/OkScreen/OkScreen';
+
+import { Link, } from 'react-router-dom';
+
 import './ProductsPage.css';
-import ErrorAlert from '../common/error/ErrorAlert';
+
 import ModelProduct from './ModelProduct';
 import Filters from './Filters';
 import Layout from '../layout/Layout';
@@ -47,12 +47,12 @@ const ProductsPage = ({ onLogout }) => {
         <div className="productsPage">
           {products.length ? (
             <div>
-              <h1>Listado de anuncios</h1>
+              <h1>Lista de anuncios</h1>
               <Filters getProductsFilter={getProductsFilter} />
               <ul>
                 {filteredProducts.length === 0 && (
                   <div>
-                    No hay anuncios que cumplan con esos requisitos. Modifica los filtros o{' '}
+                    No hay anuncios que mostrar. Modifica los filtros o{' '}
                     <Link to="/adverts/new">publica un anuncio.</Link>
                   </div>
                 )}

@@ -1,6 +1,5 @@
 import './Filters.css';
-/* import Slider from 'rc-slider';
- */ import 'rc-slider/assets/index.css';
+import 'rc-slider/assets/index.css';
 import { useState } from 'react';
 
 const Filters = ({ getAdvertsFilter }) => {
@@ -36,7 +35,6 @@ const Filters = ({ getAdvertsFilter }) => {
     setTags(tags);
   };
 
-  //TODO controlar que precio minimo sea menor que máximo y viceversa
   const handleChangeMinPrice = (event) => {
     if (event.target.value === '') {
       setMinPrice(0);
@@ -52,7 +50,6 @@ const Filters = ({ getAdvertsFilter }) => {
       setMaxPrice(event.target.value);
     }
   };
-  //----------------------
   const handleSubmit = (event) => {
     event.preventDefault();
     const filters = [name, sale, minPrice, maxPrice, tags];
@@ -71,13 +68,13 @@ const Filters = ({ getAdvertsFilter }) => {
           <fieldset className="filter-fieldset-radio" onChange={handleChangeSale}>
             <legend>Tipo de anuncio:</legend>
 
-            <label htmlFor="bySell">Venta</label>
+            <label className="labelbutton" htmlFor="bySell">Venta</label>
             <input type="radio" name="bySell" id="bySell" value={true} />
 
-            <label htmlFor="byBuy">Compra</label>
+            <label className="labelbutton" htmlFor="byBuy">Compra</label>
             <input type="radio" name="bySell" id="byBuy" value={false} />
 
-            <label htmlFor="All">Todos</label>
+            <label className="labelbutton" htmlFor="All">Todos</label>
             <input type="radio" name="bySell" id="All" value="" />
           </fieldset>
         </div>
@@ -101,11 +98,10 @@ const Filters = ({ getAdvertsFilter }) => {
             onChange={handleChangeMaxPrice}
           />
 
-          {/* <Slider value={[0, 1000]} range /> */}
         </div>
 
-        <div>
           <label htmlFor="byTags">Por tags</label>
+        <div>
           <select
             name="byTags"
             id="byTags"
@@ -131,7 +127,7 @@ const Filters = ({ getAdvertsFilter }) => {
           </select>
         </div>
 
-        <button type="submit" /* disabled={isDisabled()} */>Filtrar</button>
+        <button type="submit" >Filtrar</button>
       </div>
     </form>
   );

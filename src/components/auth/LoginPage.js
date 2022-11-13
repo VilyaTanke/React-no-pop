@@ -1,22 +1,21 @@
 import { useState } from 'react';
-// import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Button from '../common/Button';
 import FormField from '../common/FormField';
-// import { useAuth } from './context';
+import { useAuth } from './context';
 
 import './LoginPage.css';
 import { login } from './service';
 
 import { ReactComponent as Icon } from '../../assets/LOGOReactNoPop.svg';
 
-const LoginPage = ({ onLogin }) => {
+const LoginPage = ({ onLogin, ...props }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
     const [isFetching, setIsFetching] = useState(false);
-    // const location = useLocation();
-    // const navigate = useNavigate();
-    // const { handleLogin } = useAuth();
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleChangeEmail = event => setEmail(event.target.value);
     const handleChangePassword = event => setPassword(event.target.value);
@@ -29,9 +28,9 @@ const LoginPage = ({ onLogin }) => {
             resetError();
             setIsFetching(true);
             await login({ email, password });
-            // handleLogin();
-            // const to = location.state?.from?.pathname || '/';
-            // navigate(to, { replace: true });
+            onLogin();
+            const to = location.state?.from?.pathname || '/';
+            navigate(to, { replace: true });
         } catch ( error ) {
             setError(error);
             setIsFetching(false);

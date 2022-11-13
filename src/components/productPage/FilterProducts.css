@@ -1,9 +1,0 @@
-.filter__container {
-    top: 90px;
-    position: sticky;
-    background-color: blue;
-}
-
-.filter__button{
-    cursor: pointer;
-}
