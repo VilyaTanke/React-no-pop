@@ -7,7 +7,7 @@ const FormField = ({ className, label, ...props }) => {
         <div className={classNames('formField', className)}>
             <label className="formField-label">
                 <span>{label}</span>
-                <input className="formField-input" autocomplete="off" {...props} />
+                <input className="formField-input" autoComplete="off" {...props} />
             </label>
         </div>
     );

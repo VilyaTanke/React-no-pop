@@ -7,7 +7,7 @@ const ModelProduct = ({product}) => {
             <h3>{product.name}</h3>
             <img
                 src={product.photo || 'https://cdn-icons-png.flaticon.com/512/3280/3280594.png'}
-                alt='foto'
+                alt='foto' width="100" height="100"
             />
             <h3>{product.price}</h3>
             <h6>Categoria</h6>

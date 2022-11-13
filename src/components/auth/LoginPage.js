@@ -10,7 +10,7 @@ import { login } from './service';
 import { ReactComponent as Icon } from '../../assets/LOGOReactNoPop.svg';
 
 const LoginPage = ({ onLogin }) => {
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
     const [isFetching, setIsFetching] = useState(false);
@@ -18,7 +18,7 @@ const LoginPage = ({ onLogin }) => {
     // const navigate = useNavigate();
     // const { handleLogin } = useAuth();
 
-    const handleChangeUsername = event => setUsername(event.target.value);
+    const handleChangeEmail = event => setEmail(event.target.value);
     const handleChangePassword = event => setPassword(event.target.value);
     const resetError = () => setError(null);
 
@@ -28,7 +28,7 @@ const LoginPage = ({ onLogin }) => {
         try {
             resetError();
             setIsFetching(true);
-            await login({ username, password });
+            await login({ email, password });
             // handleLogin();
             // const to = location.state?.from?.pathname || '/';
             // navigate(to, { replace: true });
@@ -38,7 +38,7 @@ const LoginPage = ({ onLogin }) => {
         }
     };
 
-    const isButtonEnabled = () => username && password && !isFetching;
+    const isButtonEnabled = () => email && password && !isFetching;
 
     // const isButtonEnabled = useMemo(() => {
     //     return username && password && !isFetching;
@@ -54,10 +54,10 @@ const LoginPage = ({ onLogin }) => {
                 <FormField
                     type="text"
                     name="username"
-                    label="email or Username"
+                    label="email"
                     className="loginForm-field"
-                    onChange={handleChangeUsername}
-                    value={username}
+                    onChange={handleChangeEmail}
+                    value={email}
                 />
                 <FormField
                     type="password"
